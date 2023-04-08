@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: relative;
+            display: flex;
+            gap: 40vw;
+        }
+
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+
+        .logo {
+            position: relative;
+        }
+
+        .logo img {
+            width: 10vw;
+        }
+
+        .nav {
+            position: relative;
+            list-style: none;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav li {
+            position: relative;
+            font-size: 1.5vw;
+        }
+
+        .nav li a {
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(to right, #08FDD8, #9C8CB9, rgb(171, 255, 194), rgb(63, 121, 224), #E6F2FF, white);
+            background-size: 500% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flow 5s linear infinite;
+            border: 5px solid transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+
+        .content {
+            position: relative;
+            top: 10vw;
+        }
+
+        @keyframes flow {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        .knowledge {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10vw;
+            justify-content: space-around;
+            margin: 4vw 0;
+            align-items: center;
+        }
+
+        .introduction {
+            width: 42vw;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .introduction h1 {
+            font-size: 2vw;
+        }
+
+        .introduction h2 {
+            font-size: 1.2vw;
+        }
+
+        .skills {
+            width: 42vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .skills h1 {
+            font-size: 2vw;
+        }
+
+        .skills h2 {
+            font-size: 1.2vw;
+        }
+
+        .portimg {
+            position: relative;
+        }
+
+        .portimg img {
+            width: 30vw;
+        }
+
+        .projects {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 8vw 0;
+        }
+
+        .projects h1 {
+            font-size: 3vw;
+        }
+
+        .projects h2 {
+            font-size: 1.2vw;
+        }
+
+        .previous {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .work {
+            position: relative;
+        }
+
+        .work img {
+            position: relative;
+            width: 10vw;
+        }
+
+        .work p {
+            position: relative;
+
+        }
+
+        .work a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .experience {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 8vw 0;
+        }
+
+        .experience h1 {
+            font-size: 3vw
+        }
+
+        .experience h2 {
+            font-size: 1.2vw;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about {
+            position: relative;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .about h1 {
+            font-size: 4vw;
+        }
+
+        .about h2 {
+            font-size: 2vw;
+            position: relative;
+            top: -15vw;
+            text-align: left;
+            left: 3vw;
+        }
+
+        .about h3 {
+            position: relative;
+            top: -15vw;
+            text-align: left;
+            left: 3vw;
+            background-color: cadetblue;
+            padding: 1vw;
+            width: 9vw;
+            border-radius: 2px;
+        }
+
+        #about {
+            margin: 8vw 0;
+            padding-top: 5vw;
+        }
+
+        .hobby {
+            position: relative;
+            text-align: center;
+            top: -10vw;
+            margin: 0 33vw;
+        }
+
+        .hobby h4 {
+            position: relative;
+            width: 40vw;
+        }
+
+
+
+        .snow_wrap {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background-image: url(snowbg.jpeg);
+            position: relative;
+            background-size: cover;
+            right: -2vw;
+        }
+
+        .snow {
+            display: none;
+        }
+
+        .snow,
+        .snow:before,
+        .snow:after {
+            position: absolute;
+            top: -650px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image:
+                radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+                radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+                radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+                radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+                radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+                radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+                radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+                radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+                radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+            background-size: 650px 650px;
+            animation: snow 3s linear infinite;
+            content: "";
+        }
+
+        .snow:after {
+            margin-left: -250px;
+            opacity: 0.5;
+            filter: blur(2px);
+            animation-duration: 6s;
+            animation-direction: reverse;
+        }
+
+        .snow:before {
+            margin-left: -350px;
+            opacity: 0.7;
+            filter: blur(1px);
+            animation-duration: 9s;
+            animation-direction: reverse;
+        }
+
+        @keyframes snow {
+            to {
+                transform: translateY(650px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header sticky-header">
+        <div class="logo"><img src="logo.png" alt=""></div>
+        <div class="nav">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="snow.html">Blog</a></li>
+            <li><a href="">Contact</a></li>
+        </div>
+    </div>
+    <div class="content">
+        <div class="knowledge">
+            <div class="introduction">
+                <h1>1. Introduction</h1>
+                <h2>Hi, I am Ritik, a Full Stack Developer with a strong focus on HTML, CSS, and JavaScript. I'm
+                    passionate
+                    about crafting engaging and intuitive websites and web applications that help businesses achieve
+                    their
+                    online goals.In addition to my expertise in these core technologies, I also have experience with
+                    online
+                    website creation platforms such as Wix and WordPress. I'm comfortable working with a variety of
+                    tools
+                    and platforms to deliver the best results for my clients.</h2>
+            </div>
+            <div class="portimg">
+                <img src="one.jpeg" alt="">
+            </div>
+            <div class="portimg">
+                <img src="two.png" alt="">
+            </div>
+            <div class="skills">
+                <h1>2. Skills</h1>
+                <h2>
+                    <li> Proficient in HTML, CSS, JavaScript, PHP, and Wix</li>
+                    <li> Knowledge of front-end design principles and UI/UX best practices</li>
+                    <li> Experience with back-end development using PHP, MySQL, and Apache</li>
+                    <li> Experience with server configuration and management using NGINX, VPS, and Linux</li>
+                    <li> Strong problem-solving and debugging skills</li>
+                    <li> Familiarity with version control systems such as Git and SVN</li>
+                    <li> Ability to work independently and as part of a team</li>
+                    <li> Excellent communication and time management skills</li>
+                </h2>
+            </div>
+        </div>
+        <div class="projects">
+            <h1>Recent Projects</h1>
+            <div class="previous">
+                <div class="work">
+                    <img src="project1.png" alt="">
+                    <p><br><a href="https://pnraoclothingcompany.com">PNRAO</a></p>
+                </div>
+                <div class="work">
+                    <img src="project2.png" alt="">
+                    <p><br><a href="https://womenswearbusiness.com">WOMENS WEAR BUSINESS</a></p>
+                </div>
+                <div class="work">
+                    <img src="project3.png" alt="">
+                    <p> <br><a href="https://wwb-scarves-accessories.com">WWB SCARVES ACCESSORIES</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <h1>Experience</h1>
+            <h2>I am a self-taught full stack web developer who has gained <br> extensive experience through hands-on
+                learning and practical projects. <br> I have a proven track record of delivering high-quality websites
+                <br>
+                and web applications that meet my clients' needs <br> and exceed their expectations. <br>
+
+                My journey started by watching online tutorials, reading documentation, <br> and seeking guidance from
+                ChatGPT,
+                Google, and other online resources. <br> I have worked on a variety of projects, including building
+                websites
+                <br> from
+                scratch using HTML, CSS, and JavaScript, <br> and converting designs from Adobe XD to code. <br>
+
+                Throughout my experience, I have continually expanded <br> my skillset and stayed up-to-date with the
+                latest
+                <br> web
+                development technologies and trends. <br> I'm passionate about learning and growing as a developer, <br>
+                and
+                I'm
+                always looking for new opportunities to push <br> my limits and deliver exceptional results for my
+                clients.
+            </h2>
+        </div>
+        <div class="about" id="about">
+            <h1> About Me</h1>
+            <div class="snow_wrap">
+                <div class="snow" id="snow"></div>
+            </div>
+            <h2>Hey, I am Ritik Kratzel <br>from The Himalayas.</h2>
+            <h3 onclick="makeitsnow()">Make It Snow</h3>
+            <div class="hobby">
+
+
+                <h4>I've spent my entire life in Manali, surrounded by the snow-capped Himalayan
+                    mountains. br While I love my hometown, I have a strong desire to explore other parts of the world,
+                    with
+                    New Zealand being my top destination, with its stunning natural beauty and abundance of tiny houses
+                    that I dream of building myself.
+
+                    When I'm not daydreaming about my tiny house, you can usually find me binge-watching TV shows and
+                    movies. I never seem to get tired of it!
+
+                    I also enjoy traveling with my friends and seeking out adventures.And Parkour has always fascinated
+                    me, a
+                    great way to experience thrill and excitement
+                </h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 50) {
+                $(".logo").fadeOut();
+                $(".nav").css({
+                    "justify-content": "space-around",
+                    "background-color": "black",
+                    "padding": "1.5vw",
+                    "transition": "all 0.5s ease-in-out"
+                });
+            } else {
+                $(".logo").fadeIn();
+                $(".nav").css("justify-content", "space-around");
+            }
+        });
+        function makeitsnow() {
+            var snowWrap = document.getElementById("snow");
+            snowWrap.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
